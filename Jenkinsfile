@@ -25,7 +25,7 @@ pipeline {
       steps{
         script{
           docker.image("${registry}:${env.BUILD_ID}").with('-p 9005:9000'){
-            c -> sh "sleep 5; curl -i http://localhost:9005/test_string"
+            c -> sh 'sleep 5; curl -i http://localhost:9005/test_string'
           }
         }
       }
